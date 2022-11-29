@@ -1,0 +1,5 @@
+<ul *ngIf="foodItems$ | async as foodItems">
+  <li *ngFor="let food of foodItems" [routerLink]="'food/' + food.id">
+    {{ food.name }}
+  </li>
+</ul>

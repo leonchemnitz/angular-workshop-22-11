@@ -17,4 +17,13 @@ export class FoodService {
   getFoods() {
     return this.http.get<Food[]>('api/foods');
   }
+
+  get(id: string) {
+    return this.http.get<Food>(`api/foods/${id}`);
+  }
+
+  save(food: Food) {
+    console.log('saving!');
+    return this.http.put<Food>(`api/foods/${food.id}`, food);
+  }
 }

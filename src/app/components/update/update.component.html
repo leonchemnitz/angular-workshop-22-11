@@ -1,0 +1,7 @@
+<div *ngIf="currentFood !== undefined">
+  <span>Name</span>
+  <input type="text" [(ngModel)]="currentFood.name" />
+  <span>Healthiness</span>
+  <input type="text" [(ngModel)]="currentFood.healthiness" />
+  <button (click)="saveClicked()">Save</button>
+</div>
