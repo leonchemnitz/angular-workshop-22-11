@@ -1,5 +1,5 @@
 <ul *ngIf="foodItems$ | async as foodItems">
   <li *ngFor="let food of foodItems">
-    {{ food.attributes.name }}
+    {{ food.name }}
   </li>
 </ul>

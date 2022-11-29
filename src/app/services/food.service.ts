@@ -4,14 +4,8 @@ import { map } from 'rxjs';
 
 export type Food = {
   id: number;
-  attributes: {
-    name: string;
-    healthiness: number;
-  };
-};
-
-export type Foods = {
-  data: Food[];
+  name: string;
+  healthiness: number;
 };
 
 @Injectable({
@@ -21,6 +15,6 @@ export class FoodService {
   constructor(private http: HttpClient) {}
 
   getFoods() {
-    return this.http.get<Foods>('api/foods').pipe(map((foods) => foods.data));
+    return this.http.get<Food[]>('api/foods');
   }
 }
